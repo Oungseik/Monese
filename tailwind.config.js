@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Inter', ...fontFamily.sans],
+        primary: ['Roboto', ...fontFamily.sans],
+        secondary: ['Aref Ruqaa Ink', ...fontFamily.serif],
       },
       colors: {
         primary: {
