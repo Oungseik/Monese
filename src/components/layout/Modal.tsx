@@ -10,7 +10,9 @@ export default function Modal() {
 
   return (
     <>
-      <div className={clsx('fixed top-0 h-full w-full', !isOpen && 'hidden')}>
+      <div
+        className={clsx('fixed top-0 z-50 h-full w-full', !isOpen && 'hidden')}
+      >
         <div
           className='absolute top-0 left-0 h-full w-full bg-gray-700/80 blur-sm'
           onClick={closeModal}
@@ -38,7 +40,7 @@ export default function Modal() {
               className='rounded-lg border border-indigo-700 px-3 py-2 text-indigo-700'
               onClick={closeModal}
             >
-              NO THANK{' '}
+              NO THANK
             </button>
           </div>
         </div>
