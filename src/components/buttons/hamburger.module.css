@@ -1,0 +1,43 @@
+.whiteLine {
+  background-color: rgb(229 231 235);
+  height: 3px;
+  width: 28px;
+  position: relative;
+}
+
+.whiteLine::before,
+.whiteLine::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 28px;
+  left: 0;
+  background-color: rgb(229 231 235);
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+
+.whiteLine::before {
+  top: -8px;
+}
+
+.whiteLine::after {
+  top: 8px;
+}
+
+.active .whiteLine {
+  visibility: hidden;
+}
+
+.active .whiteLine::before,
+.active .whiteLine::after {
+  visibility: visible;
+  top: 0;
+}
+
+.active .whiteLine::before {
+  transform: rotate(-45deg);
+}
+
+.active .whiteLine::after {
+  transform: rotate(45deg);
+}
