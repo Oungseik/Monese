@@ -1,0 +1,20 @@
+{
+  "movies": [
+    {
+      "title": "Shang-Chi and The Legend of Ten Rings",
+      "poster": {
+        "large": "shang-chi-large.jpg",
+        "small": "shang-chi-small.jpg"
+      },
+      "directory": "shang-chi-and-the-legend-of-the-ten-rings"
+    },
+    {
+      "title": "Spider-Man: Far From Home",
+      "poster": {
+        "large": "spider-man-far-from-home-large.jpg",
+        "small": "spider-man-far-from-home-small.jpg"
+      },
+      "directory": "spider-man-far-from-home"
+    }
+  ]
+}
