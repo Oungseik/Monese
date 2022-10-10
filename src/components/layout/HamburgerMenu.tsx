@@ -1,15 +1,10 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 
+import navigationItems from '@/data/navigations-items.json';
+
 import HamburgerButton from '../buttons/HamburgerButton';
 import UnstyledLink from '../links/UnstyledLink';
-
-const menu = [
-  { href: '/movies', name: 'Movies' },
-  { href: '/series', name: 'series' },
-  { href: '/shorts', name: 'shorts' },
-  { href: '/how-to-download', name: 'How to Download' },
-];
 
 export default function HamburgerMenu() {
   const [isActive, setIsActive] = useState(false);
@@ -28,7 +23,7 @@ export default function HamburgerMenu() {
           !isActive && 'hidden'
         )}
       >
-        {menu.map((item) => (
+        {navigationItems.map((item) => (
           <UnstyledLink href={item.href} key={item.href}>
             {item.name}
           </UnstyledLink>
