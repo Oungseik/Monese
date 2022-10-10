@@ -1,0 +1,18 @@
+[
+  {
+    "href": "/movies",
+    "name": "Movies"
+  },
+  {
+    "href": "/series",
+    "name": "series"
+  },
+  {
+    "href": "/shorts",
+    "name": "shorts"
+  },
+  {
+    "href": "/how-to-download",
+    "name": "How to Download"
+  }
+]

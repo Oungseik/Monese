@@ -18,8 +18,8 @@ export default function Modal() {
           onClick={closeModal}
         />
 
-        <div className='absolute top-1/2 left-1/2 grid w-full max-w-[300px] -translate-y-1/2 -translate-x-1/2 gap-y-3 rounded-lg bg-zinc-300 px-3 py-4 text-gray-700'>
-          <h2 className='font-secondary text-3xl'>Monese</h2>
+        <div className='absolute top-1/2 left-1/2 grid w-full max-w-[300px] -translate-y-1/2 -translate-x-1/2 gap-y-3 rounded-lg bg-zinc-300 px-3 py-4 text-gray-700 sm:max-w-[500px] sm:px-6 sm:py-8'>
+          <h2 className='font-secondary text-4xl'>Monese</h2>
 
           <p>
             Lorem ipsum dolor sit amet, officia excepteur ex fugiat
@@ -27,7 +27,7 @@ export default function Modal() {
             ex esse exercitation amet. Voluptate laboris sint cupidatat ullamco.
           </p>
 
-          <div className='flex gap-x-8 text-xs font-semibold'>
+          <div className='flex gap-x-8 text-xs font-semibold sm:gap-12'>
             <a
               href='https://www.google.com'
               className='rounded-lg bg-indigo-700 px-3 py-2 text-gray-200'
