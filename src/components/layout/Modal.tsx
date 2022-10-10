@@ -11,7 +11,10 @@ export default function Modal() {
   return (
     <>
       <div
-        className={clsx('fixed top-0 z-50 h-full w-full', !isOpen && 'hidden')}
+        className={clsx(
+          'fixed top-0 z-50 h-full w-full text-center',
+          !isOpen && 'hidden'
+        )}
       >
         <div
           className='absolute top-0 left-0 h-full w-full bg-gray-700/80 blur-sm'
@@ -27,7 +30,7 @@ export default function Modal() {
             ex esse exercitation amet. Voluptate laboris sint cupidatat ullamco.
           </p>
 
-          <div className='flex gap-x-8 text-xs font-semibold sm:gap-12'>
+          <div className='flex justify-center gap-x-8 text-xs font-semibold sm:gap-12'>
             <a
               href='https://www.google.com'
               className='rounded-lg bg-indigo-700 px-3 py-2 text-gray-200'
