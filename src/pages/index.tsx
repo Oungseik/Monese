@@ -31,7 +31,7 @@ export default function HomePage({
   return (
     <Layout>
       <Seo templateTitle='Home' />
-      <NewRelease newReleaseMoviesAndSeries={moviesData.slice(0, 2)} />
+      <NewRelease newReleaseMoviesAndSeries={moviesData.slice(0, 3)} />
       <Modal />
       <Ads />
       <Cards cardProps={moviesData} />
