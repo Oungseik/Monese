@@ -3,6 +3,7 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { getDirectory, getFileNames, getPostData } from '@/lib/post';
 import { compose } from '@/lib/utils';
 
+import Ads from '@/components/layout/Ads';
 import Cards from '@/components/layout/Cards';
 import Layout from '@/components/layout/Layout';
 
@@ -13,6 +14,7 @@ export default function Movies({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout>
+      <Ads />
       <Cards cardProps={moviesData} />
     </Layout>
   );
