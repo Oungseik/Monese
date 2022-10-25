@@ -1,14 +1,17 @@
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import * as React from 'react';
-import { Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/autoplay';
 
-import featureData from '@/data/feature.json';
+import { getDirectory, getFileNames, getPostData } from '@/lib/post';
+import { compose } from '@/lib/utils';
 
+import Ads from '@/components/layout/Ads';
+import Cards from '@/components/layout/Cards';
 import Layout from '@/components/layout/Layout';
 import Modal from '@/components/layout/Modal';
+import NewRelease from '@/components/layout/NewRelease';
 import Seo from '@/components/Seo';
+
+import { MediaMetaDataSchema } from '@/types/types';
 
 /**
  * SVGR Support
@@ -22,44 +25,32 @@ import Seo from '@/components/Seo';
 // Before you begin editing, follow all comments with `STARTERCONF`,
 // to customize the default configuration.
 
-export default function HomePage() {
-  const movies = featureData.movies;
-
+export default function HomePage({
+  moviesData,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout>
-      {/* <Seo templateTitle='Home' /> */}
-      <Seo />
-      <Swiper
-        modules={[Autoplay]}
-        className='mySwiper'
-        slidesPerView={1}
-        autoplay={{ delay: 5000 }}
-      >
-        {movies.map((movie) => (
-          <SwiperSlide key={movie.title}>
-            <div className='relative'>
-              <picture>
-                <source
-                  srcSet={`/images/movies/${movie.directory}/${movie.poster.large}`}
-                  type='image/jpg'
-                />
-                <img
-                  className='h-60 w-full object-cover object-top sm:h-80 md:h-[460px] lg:h-[480px]'
-                  src={`/images/movies/${movie.directory}/${movie.poster.large}`}
-                  alt={movie.title}
-                />
-              </picture>
-              <span
-                className='absolute bottom-0 text-lg font-bold'
-                style={{ textShadow: '1px 1px black' }}
-              >
-                {movie.title}
-              </span>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <Seo templateTitle='Home' />
+      <NewRelease newReleaseMoviesAndSeries={moviesData.slice(0, 2)} />
       <Modal />
+      <Ads />
+      <Cards cardProps={moviesData} />
     </Layout>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const fileNames = compose(getDirectory, getFileNames)('movies');
+  const moviesData: MediaMetaDataSchema[] = fileNames.map(
+    getPostData('movies')
+  );
+  const sortedMoviesData = moviesData.sort((a, b) =>
+    a.date > b.date ? -1 : 0
+  );
+
+  return {
+    props: {
+      moviesData: sortedMoviesData,
+    },
+  };
+};
