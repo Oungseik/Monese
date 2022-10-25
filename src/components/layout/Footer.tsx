@@ -31,7 +31,7 @@ const socialMedia = [
 export default function Footer() {
   return (
     <footer className='bg-gray-900 px-4 py-4'>
-      <div>
+      <div className='flex gap-x-8'>
         <div>
           <UnstyledLink
             href='/'
@@ -55,6 +55,23 @@ export default function Footer() {
             ))}
           </ul>
         </div>
+
+        <div className='flex flex-col gap-y-3'>
+          <h2>Donate Us</h2>
+          <p>
+            Donate us to help support this <strong>Monese</strong> website &amp;
+            our Mon community.
+          </p>
+          <a
+            href='https://www.google.com'
+            className='max-w-[140px] rounded-lg bg-indigo-700 px-3 py-2 text-gray-200'
+            target='_blank'
+            rel='noreferrer'
+          >
+            &#36; DONATE NOW
+          </a>
+        </div>
+
       </div>
     </footer>
   );
