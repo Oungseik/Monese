@@ -19,7 +19,10 @@ export default function Navigation({ className }: { className?: string }) {
         <li key={name}>
           <UnstyledLink
             href={href}
-            className={clsx(pathname.includes(href) && 'text-gray-200')}
+            className={clsx(
+              'transition hover:text-gray-200',
+              pathname.includes(href) && 'text-gray-200'
+            )}
           >
             {name}
           </UnstyledLink>
