@@ -71,6 +71,7 @@ export default function Footer() {
             &#36; DONATE NOW
           </a>
         </div>
+
       </div>
     </footer>
   );
