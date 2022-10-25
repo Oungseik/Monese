@@ -6,9 +6,9 @@ const defaultMeta = {
   title: 'Monese Entertainment',
   siteName: 'Monese Entertainment',
   description:
-    'A starter for Next.js, Tailwind CSS, and TypeScript with Absolute Import, Seo, Link component, pre-configured with Husky',
+    'Entertainment website with Mon Language subtitle for supporting Mon Language and Fund raising for national schools.',
   /** Without additional '/' on the end, e.g. https://theodorusclarence.com */
-  url: 'https://tsnext-tw.thcl.dev',
+  url: 'https://monese-sage.vercel.app/',
   type: 'website',
   robots: 'follow, index',
   /**
