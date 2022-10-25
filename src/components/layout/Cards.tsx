@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import Image from 'next/image';
 
 import UnstyledLink from '../links/UnstyledLink';
 
@@ -12,7 +11,7 @@ export default function Cards({
 }) {
   return (
     <>
-      <div className='mx-auto grid grid-cols-2 justify-between gap-4 px-4 py-4 text-center sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
+      <div className='mx-auto grid max-w-5xl grid-cols-2 justify-between gap-4 px-4 pb-4 text-center sm:grid-cols-3 sm:px-0 sm:pb-8 md:grid-cols-4'>
         {cardProps.map((prop) => (
           <Card {...prop} key={prop.id} />
         ))}
@@ -36,17 +35,19 @@ function Card({
 }: MediaMetaDataSchema & { className?: string }) {
   return (
     <UnstyledLink href={`/movies/${id}`}>
-      <div className={clsx('relative mx-auto max-w-[200px]', className)}>
-        <Image
-          src={getImage(type, id, poster.small)}
-          width={200}
-          height={275}
-          alt={title}
-        />
+      <div className={clsx('relative mx-auto ', className)}>
+        <picture>
+          <source srcSet={getImage(type, id, poster.small)} type='image/jpg' />
+          <img
+            className='max-h-[340px] w-full'
+            src={getImage(type, id, poster.small)}
+            alt={title}
+          />
+        </picture>
         <span className='absolute top-2 left-2 z-10 rounded-lg bg-yellow-300 px-2 py-1 text-xs font-bold text-gray-800'>
           IMDB - {imdbRating}
         </span>
-        <p>{title}</p>
+        <p className='pt-2'>{title}</p>
       </div>
     </UnstyledLink>
   );
