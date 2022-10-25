@@ -1,5 +1,7 @@
 import clsx from 'clsx';
 
+import { getImage } from '@/lib/utils';
+
 import UnstyledLink from '../links/UnstyledLink';
 
 import { MediaMetaDataSchema } from '@/types/types';
@@ -20,10 +22,10 @@ export default function Cards({
   );
 }
 
-const getImage = (postType: 'movie' | 'series', id: string, fileName: string) =>
-  postType === 'movie'
-    ? `/images/movies/${id}/${fileName}`
-    : `/images/series/${id}/${fileName}`;
+// const getImage = (postType: 'movie' | 'series', id: string, fileName: string) =>
+//   postType === 'movie'
+//     ? `/images/movies/${id}/${fileName}`
+//     : `/images/series/${id}/${fileName}`;
 
 function Card({
   imdbRating,
