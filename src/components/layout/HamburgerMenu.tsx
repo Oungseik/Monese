@@ -19,7 +19,7 @@ export default function HamburgerMenu() {
 
       <div
         className={clsx(
-          'absolute right-0 z-10 mt-1 flex w-44 flex-col gap-y-4 rounded-lg bg-gray-600 px-4 py-4 font-semibold',
+          'absolute right-0 z-50 mt-1 flex w-44 flex-col gap-y-4 rounded-lg bg-gray-600 px-4 py-4 font-semibold',
           !isActive && 'hidden'
         )}
       >
