@@ -21,7 +21,7 @@ export default function Header() {
           <FaSearch className='absolute top-1/2 left-2 -translate-y-1/2 text-gray-500' />
           <input
             placeholder='Search'
-            className='w-32 rounded-lg border  border-gray-500 bg-gray-800 pl-8 sm:w-48 md:w-64'
+            className='h-8 w-32 rounded-lg border  border-gray-500 bg-gray-800 pl-8 sm:w-48 md:w-64'
           />
         </div>
         <HamburgerMenu />
