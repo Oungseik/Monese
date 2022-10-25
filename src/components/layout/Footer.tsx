@@ -30,7 +30,7 @@ const socialMedia = [
 
 export default function Footer() {
   return (
-    <footer className='p4 bg-gray-900 sm:p-8'>
+    <footer className='bg-gray-900 py-4 sm:py-8'>
       <div className='mx-4 flex max-w-5xl justify-between gap-x-8 sm:gap-12 lg:mx-auto'>
         <div>
           <UnstyledLink
