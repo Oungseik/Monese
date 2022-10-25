@@ -6,13 +6,24 @@ export type GetAsset = (
   assetType: 'images'
 ) => (
   postType: 'movies' | 'series'
-) => (showName: string) => (fileName: string) => string;
+) => (id: string) => (fileName: string) => string;
 
 export type GetFileNames = (directory: string) => string[];
 
 export type GetId = (fileName: string) => string;
 
-export type GetPostData = (path: string) => MediaMetaDataSchema;
+export type GetPostData = (
+  postType: PostType
+) => (fileName: string) => MediaMetaDataSchema;
+
+export type GetPost = (
+  postType: PostType,
+  fileName: string
+) => Promise<
+  {
+    contentHTML: string;
+  } & MediaMetaDataSchema
+>;
 
 type DownloadInfo = {
   server: 'google drive' | 'mega' | 'telegram';
@@ -30,6 +41,7 @@ type Poster = {
 export type MediaMetaDataSchema = {
   id: string;
   title: string;
+  date: string;
   type: 'movie' | 'series';
   poster: Poster;
   imdbRating: number;
