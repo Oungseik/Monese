@@ -12,7 +12,7 @@ export default function Cards({
 }) {
   return (
     <>
-      <div className='mx-auto grid grid-cols-2 justify-between gap-4 px-4 text-center'>
+      <div className='mx-auto grid grid-cols-2 justify-between gap-4 px-4 py-4 text-center sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
         {cardProps.map((prop) => (
           <Card {...prop} key={prop.id} />
         ))}
