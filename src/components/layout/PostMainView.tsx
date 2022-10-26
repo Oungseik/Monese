@@ -34,7 +34,7 @@ export default function PostMainView({
           <strong>Duration: {duration.toUpperCase()} </strong>
         </div>
 
-        <ul className='flex gap-x-4'>
+        <ul className='flex flex-wrap gap-4'>
           {genres?.map((genre) => (
             <li key={genre}>
               <TagButton

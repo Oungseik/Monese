@@ -25,7 +25,7 @@ export type GetPost = (
   } & MediaMetaDataSchema
 >;
 
-type DownloadInfo = {
+export type DownloadInfo = {
   server: 'google drive' | 'mega' | 'telegram';
   quality: '720p' | '1080p';
   fileSize: 'string';
@@ -48,7 +48,7 @@ export type MediaMetaDataSchema = {
   duration: string;
   genres?: string[];
   trailerUrl: string;
-  DownloadInfos: DownloadInfo[];
+  downloadLinks: DownloadInfo[];
 };
 
 export type MediaType = {
