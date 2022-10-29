@@ -12,11 +12,11 @@ export default function Navigation({ className }: { className?: string }) {
     <ul
       className={clsx(
         className,
-        'hidden gap-4 font-bold text-gray-500 sm:flex'
+        'hidden items-center justify-center gap-4 font-bold text-gray-500 md:flex'
       )}
     >
       {navigationItems.map(({ href, name }) => (
-        <li key={name}>
+        <li key={name} className='h-fit'>
           <UnstyledLink
             href={href}
             className={clsx(
