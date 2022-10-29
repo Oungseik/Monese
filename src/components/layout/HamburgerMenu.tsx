@@ -14,7 +14,7 @@ export default function HamburgerMenu() {
   };
 
   return (
-    <div className='relative sm:hidden'>
+    <div className='relative h-fit md:hidden'>
       <HamburgerButton isActive={isActive} onClick={onClickHandler} />
 
       <div

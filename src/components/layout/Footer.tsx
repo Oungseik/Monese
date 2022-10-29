@@ -3,7 +3,7 @@ import { FaTelegram, FaTiktok } from 'react-icons/fa';
 
 import clsxm from '@/lib/clsxm';
 
-import UnstyledLink from '../links/UnstyledLink';
+import Logo from '../ui/Logo';
 
 const socialMedia = [
   {
@@ -33,12 +33,7 @@ export default function Footer() {
     <footer className='bg-gray-900 py-4 sm:py-8'>
       <div className='mx-4 flex max-w-5xl justify-between gap-x-8 sm:gap-12 lg:mx-auto'>
         <div>
-          <UnstyledLink
-            href='/'
-            className='font-secondary text-3xl font-bold sm:text-4xl'
-          >
-            Monese
-          </UnstyledLink>
+          <Logo />
 
           <ul className='flex gap-2 pt-2 text-2xl'>
             {socialMedia.map((media) => (
